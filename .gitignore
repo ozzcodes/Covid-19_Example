@@ -5,6 +5,6 @@ tmp
 /.idea/
 /cv19index.iml
 *.egg-info
-build
-dist
+/build
+/dist
 /junk.ipynb
