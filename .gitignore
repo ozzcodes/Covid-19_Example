@@ -9,4 +9,5 @@ tmp
 /dist
 /junk.ipynb
 build
-dist
+/dist/
+/build/
