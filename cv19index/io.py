@@ -6,7 +6,7 @@ import math
 import pickle
 
 import pandas as pd
-from pandas.io.common import _NA_VALUES
+import pandas.io.common
 
 from .util import UserException, schema_dtypes
 
@@ -53,10 +53,10 @@ def read_frame(fpath, schema_path=None, empty_ok=False):
     # it doesn't mean it should be treated as NaN/Null.
     def na_vals(x):
         # For now, only ignore NA conversion for strings. Structs/etc can still use it.
-        if x["dataType"]["dataType"] in ("string"):
+        if x["dataType"]["dataType"] in "string":
             return []
         else:
-            return _NA_VALUES
+            return pandas.io.common
 
     # needs to be based on schema json, otherwise pandas types are just "object" which
     # tells us little on if we need to retain nan parsing.
